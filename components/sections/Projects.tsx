@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import { motion } from 'framer-motion';
 
@@ -39,35 +40,35 @@ export default function Projects() {
           {/* Project Cards */}
           <div className="projects-grid" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', gap: '32px' }}>
             {/* Safety Zone Card - LEFT */}
-            <motion.div 
-              className="project-card"
-              whileHover={{ 
-                scale: 1.03,
-                y: -8,
-                boxShadow: '0px 15px 40px rgba(199, 166, 78, 0.3), inset 0px 8px 30px rgba(0, 0, 0, 0.25)',
-                transition: {
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 20
-                }
-              }}
-              style={{
-                background: '#FFFFFF',
-                width: '100%',
-                maxWidth: '640px',
-                height: 'auto',
-                minHeight: '426px',
-                borderRadius: '12px',
-                padding: '20px 16px',
-                boxShadow: 'inset 0px 8px 30px rgba(0, 0, 0, 0.25)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer'
-              }}
-            >
+            <Link href="/safety-zone" style={{ textDecoration: 'none', width: '100%', maxWidth: '640px' }}>
+              <motion.div 
+                className="project-card"
+                whileHover={{ 
+                  scale: 1.03,
+                  y: -8,
+                  boxShadow: '0px 15px 40px rgba(199, 166, 78, 0.3), inset 0px 8px 30px rgba(0, 0, 0, 0.25)',
+                  transition: {
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20
+                  }
+                }}
+                style={{
+                  background: '#FFFFFF',
+                  width: '100%',
+                  height: 'auto',
+                  minHeight: '426px',
+                  borderRadius: '12px',
+                  padding: '20px 16px',
+                  boxShadow: 'inset 0px 8px 30px rgba(0, 0, 0, 0.25)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer'
+                }}
+              >
               {/* Card Header with Logo */}
               <div className="project-card-header" style={{
                 background: '#F5F5F5',
@@ -126,6 +127,7 @@ export default function Projects() {
                 </p>
               </div>
             </motion.div>
+            </Link>
 
             {/* Mohami Pro Card - RIGHT */}
             <motion.div 

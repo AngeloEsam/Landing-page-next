@@ -37,11 +37,11 @@ export default function Header() {
     >
       <div className="mx-auto header-inner">
         <nav className="flex items-center justify-between h-full w-full">
-          {/* Logo - Far Left (appears far right in RTL) */}
-          <div className="hidden md:flex items-center gap-2">
-            <a 
-              href="#home" 
-              onClick={(e) => handleNavClick(e, '#home')}
+          {/* Logo - Far Left (appears far right in RTL) - Desktop Only */}
+          <div className="hidden md:flex items-center gap-2 shrink-0">
+            <Link 
+              href="/" 
+              // onClick={(e) => handleNavClick(e, '#home')}
               className="flex items-center"
               style={{ cursor: 'pointer' }}
             >
@@ -50,18 +50,32 @@ export default function Header() {
                 alt="Aug Tech Logo"
                 width={184}
                 height={86}
-                className="header-logo object-contain"
+                className="header-logo object-contain max-w-[140px] lg:max-w-[184px] h-auto"
                 priority
               />
-            </a>
+            </Link>
           </div>
 
-          {/* Mobile Header - Centered Logo with Menu Button */}
-          <div className="mobile-header md:hidden flex items-center justify-center w-full relative">
-            <a 
-              href="#home" 
-              onClick={(e) => handleNavClick(e, '#home')}
-              className="mobile-header-logo flex items-center"
+          {/* Mobile Header - Logo on Left (Shmal), Menu Button on Right (Yemeen) */}
+          <div className="mobile-header md:hidden flex items-center justify-between w-full h-full">
+            {/* Mobile Menu Button - على اليمين (Right in RTL = Left visually) */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="mobile-menu-button p-2 rounded-lg hover:bg-gray-200 transition-colors z-10"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: '#4E4E4E' }} />
+              ) : (
+                <Menu className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: '#4E4E4E' }} />
+              )}
+            </button>
+            
+            {/* Logo - على الشمال (Left in RTL = Right visually) */}
+            <Link 
+              href="/" 
+              // onClick={(e) => handleNavClick(e, '/')}
+              className="mobile-header-logo flex items-center z-10"
               style={{ cursor: 'pointer' }}
             >
               <Image
@@ -69,54 +83,44 @@ export default function Header() {
                 alt="Aug Tech Logo"
                 width={120}
                 height={56}
+                style={{ maxWidth: 'clamp(80px, 20vw, 110px)', height: 'auto' }}
                 className="object-contain"
                 priority
               />
-            </a>
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="mobile-menu-button p-2 rounded-lg hover:bg-gray-200 transition-colors"
-              aria-label="Toggle menu"
-              style={{ position: 'absolute', right: '16px' }}
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" style={{ color: '#4E4E4E' }} />
-              ) : (
-                <Menu className="w-6 h-6" style={{ color: '#4E4E4E' }} />
-              )}
-            </button>
+            </Link>
           </div>
 
-          {/* Center: Navigation Links */}
+          {/* Center: Navigation Links - Desktop/Tablet */}
           <div
-            className="hidden md:flex items-center"
+            className="hidden md:flex items-center flex-1 justify-center overflow-x-auto"
             style={{
-              gap: '34px',
-              height: '80px'
+              gap: 'clamp(12px, 2.5vw, 34px)',
+              height: '100%',
+              maxWidth: '100%'
             }}
           >
             {NAV_LINKS.map((link) => (
               <div
                 key={link.href}
-                className="relative flex items-center"
-                style={{ gap: '6px' }}
+                className="relative flex items-center shrink-0"
+                style={{ gap: 'clamp(4px, 0.5vw, 6px)' }}
                 onMouseEnter={() => link.hasDropdown && setOpenDropdown(link.href)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 {link.hasDropdown && (
-                  <div style={{ width: '28px', height: '28px' }}>
+                  <div className="w-5 h-5 lg:w-7 lg:h-7">
                     <ChevronDown className="w-full h-full" style={{ color: '#4E4E4E' }} />
                   </div>
                 )}
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
+                  className="whitespace-nowrap"
                   style={{
                     fontFamily: 'Cairo, sans-serif',
                     fontWeight: '600',
-                    fontSize: '32px',
-                    lineHeight: '60px',
+                    fontSize: 'clamp(18px, 2vw, 32px)',
+                    lineHeight: 'clamp(30px, 4vw, 60px)',
                     color: '#4E4E4E',
                     textAlign: 'center',
                     textDecoration: 'none',
@@ -126,7 +130,7 @@ export default function Header() {
                   {link.label}
                 </a>
                 {link.hasDropdown && openDropdown === link.href && (
-                  <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-gray-200">
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-gray-200 z-50">
                     {/* Dropdown content can be added here */}
                   </div>
                 )}
@@ -134,26 +138,35 @@ export default function Header() {
             ))}
           </div>
 
-          {/* Book Appointment Button - Far Right (appears far left in RTL) */}
+          {/* Book Appointment Button - Far Right (appears far left in RTL) - Desktop Only */}
           <a
             href="https://calendar.app.google/ECx7ACuQPa1jLTSe7"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:flex items-center justify-center"
+            className="hidden md:flex items-center justify-center shrink-0"
             style={{
-              minWidth: '200px',
-              height: '72px',
-              padding: '6px 24px',
+              minWidth: 'clamp(140px, 15vw, 200px)',
+              height: 'clamp(50px, 6vw, 72px)',
+              padding: 'clamp(4px, 0.5vw, 6px) clamp(12px, 2vw, 24px)',
               background: '#C7A64E',
-              borderRadius: '12px',
+              borderRadius: 'clamp(8px, 1vw, 12px)',
               fontFamily: 'Cairo, sans-serif',
               fontWeight: '600',
-              fontSize: '28px',
-              lineHeight: '60px',
+              fontSize: 'clamp(16px, 1.8vw, 28px)',
+              lineHeight: 'clamp(30px, 4vw, 60px)',
               color: '#FFFFFF',
               textDecoration: 'none',
               cursor: 'pointer',
-              whiteSpace: 'nowrap'
+              whiteSpace: 'nowrap',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#B89640';
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#C7A64E';
+              e.currentTarget.style.transform = 'scale(1)';
             }}
           >
             احجز موعد معنا
@@ -161,48 +174,65 @@ export default function Header() {
         </nav>
       </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Full Width with Clear Links */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t" style={{ borderColor: '#E5E7EB', background: '#F5F5F5' }}>
-            <div className="flex flex-col space-y-4 px-4">
-              {NAV_LINKS.map((link) => (
+          <div 
+            className="md:hidden absolute top-full left-0 right-0 w-full border-t shadow-lg"
+            style={{ 
+              borderColor: '#E5E7EB', 
+              background: '#FFFFFF',
+              maxHeight: 'calc(100vh - 70px)',
+              overflowY: 'auto'
+            }}
+          >
+            <div className="flex flex-col py-4 px-4 sm:px-6">
+              {NAV_LINKS.map((link, index) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="flex items-center space-x-1 space-x-reverse py-2"
+                  className="flex items-center justify-between py-4 px-4 rounded-lg hover:bg-gray-50 transition-all border-b border-gray-100 last:border-b-0"
                   style={{
                     color: '#4E4E4E',
                     fontFamily: 'Cairo, sans-serif',
-                    fontWeight: '500',
+                    fontWeight: '600',
+                    fontSize: 'clamp(18px, 4.5vw, 22px)',
                     textDecoration: 'none',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    animationDelay: `${index * 0.05}s`,
+                    animation: 'slideInFromRight 0.3s ease-out forwards'
                   }}
                 >
                   <span>{link.label}</span>
                   {link.hasDropdown && (
-                    <ChevronDown className="w-4 h-4" />
+                    <ChevronDown className="w-5 h-5" style={{ color: '#C7A64E' }} />
                   )}
                 </a>
               ))}
+              
+              {/* Book Appointment Button in Mobile Menu */}
               <a
                 href="https://calendar.app.google/ECx7ACuQPa1jLTSe7"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
+                className="mt-4 hover:opacity-90 transition-all transform hover:scale-[1.02] active:scale-95"
                 style={{
                   width: '100%',
-                  padding: '12px 24px',
-                  background: '#C7A64E',
-                  borderRadius: '12px',
+                  padding: 'clamp(12px, 3.5vw, 16px) clamp(20px, 5vw, 28px)',
+                  background: 'linear-gradient(135deg, #C7A64E 0%, #B89640 100%)',
+                  borderRadius: 'clamp(10px, 2.5vw, 14px)',
                   fontFamily: 'Cairo, sans-serif',
-                  fontWeight: '600',
-                  fontSize: '20px',
+                  fontWeight: '700',
+                  fontSize: 'clamp(18px, 4.5vw, 22px)',
                   color: '#FFFFFF',
                   textDecoration: 'none',
                   cursor: 'pointer',
                   display: 'block',
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  boxShadow: '0 4px 12px rgba(199, 166, 78, 0.3)',
+                  animation: 'slideInFromRight 0.3s ease-out forwards',
+                  animationDelay: `${NAV_LINKS.length * 0.05}s`
                 }}
               >
                 احجز موعد معنا

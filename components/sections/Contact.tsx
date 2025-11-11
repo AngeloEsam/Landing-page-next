@@ -28,17 +28,17 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="contact-section" style={{ width: '100%', background: '#F5F5F5' }}>
+    <section id="contact" className="contact-section" style={{ width: '100%', background: '#F5F5F5', padding: 'clamp(40px, 8vw, 75px) 0' }}>
       <ScrollReveal>
-        <div className="contact-container" style={{ maxWidth: '1440px', margin: '0 auto', padding: '75px 64px' }}>
-          <div style={{ maxWidth: '1308px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '50px', alignItems: 'center' }}>
+        <div className="contact-container" style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(16px, 4vw, 64px)' }}>
+          <div style={{ maxWidth: '1308px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 'clamp(30px, 6vw, 50px)', alignItems: 'center' }}>
           {/* Section Header */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(16px, 3vw, 24px)', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center', justifyContent: 'center' }}>
               <h2 style={{
                 fontFamily: 'Cairo, sans-serif',
                 fontWeight: '700',
-                fontSize: '44px',
+                fontSize: 'clamp(28px, 5vw, 44px)',
                 lineHeight: 'normal',
                 color: '#4E4E4E',
                 textAlign: 'center',
@@ -47,26 +47,28 @@ export default function Contact() {
               }}>
                 تواصل معنا
               </h2>
-              <div style={{ height: '6px', width: '200px', position: 'relative' }}>
+              <div style={{ height: '6px', width: 'clamp(140px, 25vw, 200px)', position: 'relative' }}>
                 <div style={{
                   position: 'absolute',
                   bottom: 0,
                   left: 0,
                   right: 0,
                   height: '6px',
-                  background: '#C7A64E'
+                  background: '#C7A64E',
+                  borderRadius: '3px'
                 }} />
               </div>
             </div>
             <p style={{
               fontFamily: 'Cairo, sans-serif',
               fontWeight: '400',
-              fontSize: '22px',
-              lineHeight: '36px',
+              fontSize: 'clamp(16px, 2.5vw, 22px)',
+              lineHeight: 'clamp(26px, 4vw, 36px)',
               color: '#4E4E4E',
               textAlign: 'center',
               margin: 0,
-              maxWidth: '900px'
+              maxWidth: '900px',
+              padding: '0 16px'
             }}>
               هل لديك فكرة مشروع؟ هل تبحث عن شريك تقني موثوق؟ فريقنا جاهز للاستماع إليك ومساعدتك في تحقيق أهدافك.
             </p>
@@ -75,8 +77,8 @@ export default function Contact() {
           {/* Contact Info Cards - 2x2 Grid */}
           <div className="contact-info-cards" style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(2, 1fr)', 
-            gap: '32px', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', 
+            gap: 'clamp(16px, 3vw, 32px)', 
             width: '100%', 
             maxWidth: '1308px' 
           }}>
@@ -93,15 +95,16 @@ export default function Contact() {
                     style={{
                       background: '#FFFFFF',
                       width: '100%',
-                      height: '170px',
-                      borderRadius: '12px',
-                      padding: '24px',
+                      minHeight: 'clamp(160px, 20vw, 170px)',
+                      height: 'auto',
+                      borderRadius: 'clamp(8px, 1.5vw, 12px)',
+                      padding: 'clamp(16px, 3vw, 24px)',
                       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      gap: '16px',
+                      gap: 'clamp(12px, 2vw, 16px)',
                       cursor: info.link ? 'pointer' : 'default',
                       transition: 'transform 0.2s',
                     }}
@@ -114,8 +117,8 @@ export default function Contact() {
                   >
                     <div style={{
                       background: '#F1EEE5',
-                      width: '60px',
-                      height: '60px',
+                      width: 'clamp(50px, 8vw, 60px)',
+                      height: 'clamp(50px, 8vw, 60px)',
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
@@ -143,24 +146,36 @@ export default function Contact() {
                         </svg>
                       )}
                     </div>
-                    <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <div style={{ 
+                      textAlign: 'center', 
+                      display: 'flex', 
+                      flexDirection: 'column', 
+                      gap: '4px',
+                      width: '100%',
+                      overflow: 'hidden'
+                    }}>
                       <p style={{
                         fontFamily: 'Cairo, sans-serif',
                         fontWeight: '600',
-                        fontSize: '20px',
-                        lineHeight: '28px',
+                        fontSize: 'clamp(16px, 2.5vw, 20px)',
+                        lineHeight: 'clamp(24px, 3.5vw, 28px)',
                         color: '#4E4E4E',
-                        margin: 0
+                        margin: 0,
+                        wordWrap: 'break-word',
+                        overflowWrap: 'break-word'
                       }}>
                         {info.title}
                       </p>
                       <p style={{
                         fontFamily: 'Cairo, sans-serif',
                         fontWeight: '400',
-                        fontSize: '16px',
-                        lineHeight: '24px',
+                        fontSize: 'clamp(14px, 2vw, 16px)',
+                        lineHeight: 'clamp(20px, 3vw, 24px)',
                         color: info.link ? '#C7A64E' : '#878686',
-                        margin: 0
+                        margin: 0,
+                        wordWrap: 'break-word',
+                        overflowWrap: 'break-word',
+                        hyphens: 'auto'
                       }}>
                         {info.value}
                       </p>
