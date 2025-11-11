@@ -31,22 +31,22 @@ export default function SafetyZoneSection4() {
     const providerBenefits = [
         {
             title: " إدارة وتقديم الخدمات بكفاءة عالية",
-            description:"استقبال طلبات العملاء - تقديم عرض سعر لطلبات (العملاء) بسرعة وكفاءة - التواصل الفوري وتتبع حالة الطلب- جدولة زيارات الصيانة وإصدار تقارير الزيارة الموثقة",
+            description: "استقبال طلبات العملاء - تقديم عرض سعر لطلبات (العملاء) بسرعة وكفاءة - التواصل الفوري وتتبع حالة الطلب- جدولة زيارات الصيانة وإصدار تقارير الزيارة الموثقة",
             image: "/images/gem5.jpg",
         },
         {
             title: " التحسين المالي والإداري",
-            description:"التوقيع الإلكتروني (للعقود أو التقارير). - تحصيل المستحقات فوري إلكترونياً. - تقليل التكاليف الإدارية وزيادة كفاءة العمل",
+            description: "التوقيع الإلكتروني (للعقود أو التقارير). - تحصيل المستحقات فوري إلكترونياً. - تقليل التكاليف الإدارية وزيادة كفاءة العمل",
             image: "/images/gem7.jpg",
         },
         {
             title: "التحليل والتتبع",
-            description:"التقارير التحليلية لأداء مزود الخدمة - تنبيهات وإشعارات لكل حدث (لضمان عدم فوات أي موعد أو طلب) - تكليف موظف بالمهام",
+            description: "التقارير التحليلية لأداء مزود الخدمة - تنبيهات وإشعارات لكل حدث (لضمان عدم فوات أي موعد أو طلب) - تكليف موظف بالمهام",
             image: "/images/gem3.jpg",
         },
         {
             title: "القيمة المضافة",
-            description:"تحسين تجربة العميل والوصول إلى شريحة أوسع من العملاء",
+            description: "تحسين تجربة العميل والوصول إلى شريحة أوسع من العملاء",
             image: "/images/gem1.jpg",
         },
     ];
@@ -61,6 +61,7 @@ export default function SafetyZoneSection4() {
             <div className="max-w-7xl mx-auto">
                 <motion.h2
                     className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center"
+                    style={{ fontFamily: 'Cairo, sans-serif' }}
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
@@ -74,6 +75,7 @@ export default function SafetyZoneSection4() {
                 <motion.p
                     className="text-lg text-gray-600 leading-relaxed mb-6 text-center"
                     initial={{ opacity: 0 }}
+                    style={{ fontFamily: 'Cairo, sans-serif' }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
                 >
@@ -89,9 +91,10 @@ export default function SafetyZoneSection4() {
                     className="text-2xl font-[32px] text-[#4E4E4E] mb-8"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
+                    style={{ fontFamily: 'Cairo, sans-serif' }}
                 >
                     مزايا التحول الإلكتروني لأعمالك (للعميل)
-                    <span className="font-[26px] text-[#C7A64E]">
+                    <span className="font-[26px] text-[#C7A64E]" style={{ fontFamily: 'Cairo, sans-serif' }}>
                         (هذه الخدمات مجانية على العميل)
                     </span>
                 </motion.h3>
@@ -111,10 +114,10 @@ export default function SafetyZoneSection4() {
                                 className="w-full h-48 object-cover"
                             />
                             <div className="p-5">
-                                <h4 className="text-[16px] text-center font-bold text-gray-800 mb-2">
+                                <h4 className="text-[16px] text-center font-bold text-gray-800 mb-2" style={{ fontFamily: 'Cairo, sans-serif' }}>
                                     {benefit.title}
                                 </h4>
-                                <p className="text-gray-600 text-center font-semibold text-[14px] leading-relaxed">
+                                <p className="text-gray-600 text-center font-semibold text-[14px] leading-relaxed" style={{ fontFamily: 'Cairo, sans-serif' }}>
                                     {benefit.description}
                                 </p>
                             </div>
@@ -125,11 +128,12 @@ export default function SafetyZoneSection4() {
                 {/* مزايا المزود */}
                 <motion.h3
                     className="text-2xl font-[32px] text-[#4E4E4E] mb-8"
+                    style={{fontFamily:'Cairo, sans-serif'}}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                 >
                     مزايا التحول الإلكتروني لأعمالك
-                    <span className="font-[26px] text-[#C7A64E]">
+                    <span className="font-[26px] text-[#C7A64E]" style={{fontFamily:'Cairo, sans-serif'}}>
                         (لمزود الخدمة)
                     </span>
                 </motion.h3>
@@ -149,10 +153,10 @@ export default function SafetyZoneSection4() {
                                 className="w-full h-48 object-cover"
                             />
                             <div className="p-5">
-                                <h4 className="text-[16px] text-center font-bold text-gray-800 mb-2">
+                                <h4 className="text-[16px] text-center font-bold text-gray-800 mb-2" style={{fontFamily:'Cairo, sans-serif'}}>
                                     {benefit.title}
                                 </h4>
-                                <p className="text-gray-600 text-center font-semibold  text-[14px] leading-relaxed">
+                                <p className="text-gray-600 text-center font-semibold  text-[14px] leading-relaxed" style={{fontFamily:'Cairo, sans-serif'}}>
                                     {benefit.description}
                                 </p>
                             </div>
