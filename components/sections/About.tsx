@@ -5,7 +5,7 @@ import ScrollReveal from '@/components/animations/ScrollReveal';
 
 export default function About() {
   return (
-    <section id="about" className="about-section" style={{ width: '100%', background: '#FFFFFF', padding: 'clamp(40px, 8vw, 80px) 0' }}>
+    <section id="about" className="about-section" style={{ width: '100%', background: '#FFFFFF', padding: 'clamp(10px, 2vw, 20px) 0' }}>
       <ScrollReveal>
         <div className="about-container" style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(16px, 4vw, 64px)' }}>
           <div style={{ maxWidth: '1317px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 'clamp(30px, 5vw, 50px)', alignItems: 'center', justifyContent: 'center' }}>
@@ -64,7 +64,6 @@ export default function About() {
                 style={{
                   objectFit: 'cover',
                   objectPosition: '50% 50%',
-                  borderRadius: 'clamp(8px, 1vw, 12px)'
                 }}
                 priority
               />

@@ -28,7 +28,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="contact-section" style={{ width: '100%', background: '#F5F5F5', padding: 'clamp(40px, 8vw, 75px) 0' }}>
+    <section id="contact" className="contact-section" style={{ width: '100%', background: '#F5F5F5', padding: 'clamp(10px, 2vw, 20px) 0' }}>
       <ScrollReveal>
         <div className="contact-container" style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(16px, 4vw, 64px)' }}>
           <div style={{ maxWidth: '1308px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 'clamp(30px, 6vw, 50px)', alignItems: 'center' }}>
@@ -76,14 +76,15 @@ export default function Contact() {
 
             {/* Contact Info Cards - 2x2 Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-[1308px]">
-              {contactInfo.map((info) => {
+              {contactInfo.map((info, index) => {
                 const CardWrapper = info.link ? 'a' : 'div';
                 const cardProps = info.link
                   ? { href: info.link, target: '_blank', rel: 'noopener noreferrer', style: { textDecoration: 'none' } }
                   : {};
 
                 return (
-                  <CardWrapper key={info.id} {...cardProps}>
+                  <ScrollReveal key={info.id} delay={index * 0.15}>
+                    <CardWrapper {...cardProps}>
                     <div
                       className="contact-card"
                       style={{
@@ -100,13 +101,6 @@ export default function Contact() {
                         justifyContent: 'center',
                         gap: 'clamp(12px, 2vw, 16px)',
                         cursor: info.link ? 'pointer' : 'default',
-                        transition: 'transform 0.2s',
-                      }}
-                      onMouseEnter={(e) => {
-                        if (info.link) e.currentTarget.style.transform = 'translateY(-4px)';
-                      }}
-                      onMouseLeave={(e) => {
-                        if (info.link) e.currentTarget.style.transform = 'translateY(0)';
                       }}
                     >
                       <div style={{
@@ -176,6 +170,7 @@ export default function Contact() {
                       </div>
                     </div>
                   </CardWrapper>
+                  </ScrollReveal>
                 );
               })}
             </div>

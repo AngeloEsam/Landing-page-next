@@ -38,7 +38,7 @@ export default function Services() {
   return (
     <section id="services" className="services-section" style={{ width: '100%', background: '#FFFFFF' }}>
       <ScrollReveal>
-        <div className="services-container" style={{ maxWidth: '1440px', margin: '0 auto', padding: '75px 64px' }}>
+        <div className="services-container" style={{ maxWidth: '1440px', margin: '0 auto', padding: '20px 64px' }}>
           <div style={{ maxWidth: '1312px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '50px', alignItems: 'center' }}>
           {/* Section Header */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'flex-end', justifyContent: 'center', width: '228px' }}>
@@ -78,7 +78,7 @@ export default function Services() {
                   onHoverStart={() => setHoveredIndex(index)}
                   onHoverEnd={() => setHoveredIndex(null)}
                   animate={{
-                    scale: isHovered ? 1.15 : 1,
+                    scale: isHovered ? 1.05 : 1,
                     y: isHovered ? -10 : 0,
                     marginLeft: isHovered ? '8px' : '0px',
                     marginRight: isHovered ? '8px' : '0px'

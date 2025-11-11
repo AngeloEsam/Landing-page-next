@@ -30,11 +30,12 @@ export default function SafetyZoneSection6() {
         @media (max-width: 1070px) {
           .cards-container-section6 {
             margin-left: 0 !important;
-            order: 1 !important;
+            order: 2 !important;
           }
           .image-container-section6 {
-            order: 2 !important;
+            order: 1 !important;
             margin-top: 30px;
+            margin-bottom: 20px;
             width: 100% !important;
             min-width: 100% !important;
             justify-content: center !important;

@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <section id="projects" className="projects-section" style={{ width: '100%', background: '#F5F5F5' }}>
       <ScrollReveal>
-        <div className="projects-container" style={{ maxWidth: '1440px', margin: '0 auto', padding: '56px 64px' }}>
+        <div className="projects-container" style={{ maxWidth: '1440px', margin: '0 auto', padding: '20px 64px' }}>
           <div style={{ maxWidth: '1312px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '50px', alignItems: 'center' }}>
           {/* Section Header */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'flex-end', justifyContent: 'center', width: '264px' }}>
@@ -75,31 +75,21 @@ export default function Projects() {
                 height: '203px',
                 width: '100%',
                 borderRadius: '12px 12px 0 0',
-                padding: '4px 162px',
+                padding: '4px 16px',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '5px',
                 alignItems: 'center',
                 justifyContent: 'center'
               }}>
-                <div style={{ position: 'relative', width: '88px', height: '136px' }}>
+                <div style={{ position: 'relative', width: '286px', height: '204px' }}>
                   <Image
-                    src="/images/safety-zone-logo.png"
+                    src="/images/safty.svg"
                     alt="Safety Zone"
                     fill
                     className="object-contain"
                   />
                 </div>
-                <p style={{
-                  fontFamily: 'Almarai, Cairo, sans-serif',
-                  fontWeight: '700',
-                  fontSize: '28px',
-                  lineHeight: 'normal',
-                  color: '#263238',
-                  margin: 0
-                }}>
-                  <span style={{ color: '#EF2825' }}>S</span>afety <span style={{ color: '#A10E1E' }}>Z</span>one
-                </p>
               </div>
 
               {/* Card Content */}
@@ -130,35 +120,36 @@ export default function Projects() {
             </Link>
 
             {/* Mohami Pro Card - RIGHT */}
-            <motion.div 
-              className="project-card"
-              whileHover={{ 
-                scale: 1.03,
-                y: -8,
-                boxShadow: '0px 15px 40px rgba(199, 166, 78, 0.3), inset 0px 8px 30px rgba(0, 0, 0, 0.25)',
-                transition: {
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 20
-                }
-              }}
-              style={{
-                background: '#FFFFFF',
-                width: '100%',
-                maxWidth: '640px',
-                height: 'auto',
-                minHeight: '426px',
-                borderRadius: '12px',
-                padding: '20px 16px',
-                boxShadow: 'inset 0px 8px 30px rgba(0, 0, 0, 0.25)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer'
-              }}
-            >
+            <Link href="/mohami-pro" style={{ textDecoration: 'none', width: '100%', maxWidth: '640px' }}>
+              <motion.div 
+                className="project-card"
+                whileHover={{ 
+                  scale: 1.03,
+                  y: -8,
+                  boxShadow: '0px 15px 40px rgba(199, 166, 78, 0.3), inset 0px 8px 30px rgba(0, 0, 0, 0.25)',
+                  transition: {
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20
+                  }
+                }}
+                style={{
+                  background: '#FFFFFF',
+                  width: '100%',
+                  maxWidth: '640px',
+                  height: 'auto',
+                  minHeight: '426px',
+                  borderRadius: '12px',
+                  padding: '20px 16px',
+                  boxShadow: 'inset 0px 8px 30px rgba(0, 0, 0, 0.25)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer'
+                }}
+              >
               {/* Card Header with Logo */}
               <div className="project-card-header" style={{
                 background: '#F5F5F5',
@@ -219,6 +210,7 @@ export default function Projects() {
                 </p>
               </div>
             </motion.div>
+            </Link>
           </div>
         </div>
         </div>
