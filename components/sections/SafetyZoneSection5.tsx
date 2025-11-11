@@ -37,7 +37,7 @@ export default function SafetyZoneSection5() {
       {/* Header Section - Outside the background image */}
       <div style={{
         width: '100%',
-        padding: 'clamp(50px, 8vw, 80px) 0 clamp(30px, 5vw, 50px) 0',
+        padding: '0 0 clamp(30px, 5vw, 50px) 0',
         background: '#FFFFFF'
       }}>
         <ScrollReveal>
