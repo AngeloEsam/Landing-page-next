@@ -145,8 +145,8 @@ export default function SafetyZoneSection7() {
             }}>
               <div className="image-circle-section7" style={{
                 position: 'absolute',
-                width: 'clamp(280px, 45vw, 550px)',
-                height: 'clamp(280px, 45vw, 550px)',
+                width: 'clamp(320px, 50vw, 550px)',
+                height: 'clamp(320px, 50vw, 550px)',
                 background: '#F1EEE5',
                 borderRadius: '50%',
                 zIndex: 1,
@@ -160,7 +160,8 @@ export default function SafetyZoneSection7() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 gap: 'clamp(12px, 2vw, 20px)',
-                padding: 'clamp(10px, 2vw, 20px)'
+                padding: 'clamp(20px, 3vw, 30px)',
+                maxWidth: '100%'
               }}>
                 <Image
                   src="/images/section7.png"
