@@ -109,7 +109,7 @@ export default function Projects() {
                   color: '#C7A64E',
                   margin: 0
                 }}>
-                  سيفتي زون
+                  Safety Zone
                 </p>
                 <p className="project-description" style={{
                   fontFamily: 'Cairo, sans-serif',
