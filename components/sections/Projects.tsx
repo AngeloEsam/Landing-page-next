@@ -12,7 +12,7 @@ export default function Projects() {
         <div className="projects-container" style={{ maxWidth: '1440px', margin: '0 auto', padding: 'clamp(20px, 4vw, 64px)' }}>
           <div style={{ maxWidth: '1312px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 'clamp(30px, 5vw, 50px)', alignItems: 'center' }}>
           {/* Section Header */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'flex-end', justifyContent: 'center', width: 'clamp(200px, 80%, 264px)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center', justifyContent: 'center', width: 'clamp(200px, 80%, 264px)' }}>
             <h2 style={{
               fontFamily: 'Cairo, sans-serif',
               fontWeight: '700',

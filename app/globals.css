@@ -524,9 +524,11 @@ section {
   .mobile-header-logo {
     display: flex !important;
     align-items: center !important;
-    justify-content: flex-end !important;
+    justify-content: center !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     z-index: 10;
-    order: 2;
   }
 
   .mobile-header-logo img {
