@@ -3,8 +3,21 @@
 import { motion } from "framer-motion";
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function SafetyZoneSection7() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth > 768);
+    
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const steps = [
     {
       title: "التسجيل وإضافة الأصول",
@@ -27,7 +40,8 @@ export default function SafetyZoneSection7() {
   return (
     <>
       <style jsx>{`
-        @media (max-width: 1070px) {
+        /* على الموبايل: الكاردات تحت بعض بدون تعرج */
+        @media (max-width: 768px) {
           .cards-container-section6 {
             margin-right: 0 !important;
             order: 2 !important;
@@ -50,18 +64,6 @@ export default function SafetyZoneSection7() {
             transform: translateX(-50%);
           }
           .image-content-section6 {
-            margin-right: 0 !important;
-          }
-        }
-        
-        @media (max-width: 640px) {
-          .cards-container-section6 {
-            flex-direction: column !important;
-            gap: 16px !important;
-          }
-          .card-section6 {
-            width: 100% !important;
-            margin-left: 0 !important;
             margin-right: 0 !important;
           }
         }
@@ -177,8 +179,9 @@ export default function SafetyZoneSection7() {
                       borderRadius: 'clamp(12px, 1.5vw, 16px)',
                       padding: 'clamp(16px, 2vw, 20px) clamp(18px, 2.5vw, 24px)',
                       textAlign: 'right',
-                      marginRight: (index === 0 || index === 3) ? '0' : 'clamp(40px, 8vw, 120px)',
-                      marginLeft: (index === 1 || index === 2) ? '0' : 'clamp(40px, 8vw, 120px)',
+                      // تعرج على اللابتوب فقط
+                      marginRight: isDesktop ? ((index === 0 || index === 3) ? '0' : 'clamp(40px, 8vw, 120px)') : '0',
+                      marginLeft: isDesktop ? ((index === 1 || index === 2) ? '0' : 'clamp(40px, 8vw, 120px)') : '0',
                     }}
                   >
                     <h3 style={{
