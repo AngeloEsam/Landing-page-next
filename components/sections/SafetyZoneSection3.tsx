@@ -89,33 +89,33 @@ export default function SafetyZoneSection3() {
                         <div style={{
                             display: 'flex',
                             flexDirection: 'column',
-                            gap: 'clamp(24px, 4vw, 32px)',
+                            gap: 'clamp(20px, 3vw, 32px)',
                             width: '100%',
                             maxWidth: '1100px',
                             background: '#F5F5F5',
-                            padding: 'clamp(30px, 5vw, 50px)',
-                            borderRadius: 'clamp(16px, 2vw, 24px)'
+                            padding: 'clamp(16px, 3vw, 50px)',
+                            borderRadius: 'clamp(12px, 2vw, 24px)'
                         }}>
                             {services.map((service, index) => (
                                 <ScrollReveal key={service.id} direction={service.direction}>
                                     <motion.div
                                         whileHover={{ scale: 1.02, y: -4 }}
                                         transition={{ duration: 0.3 }}
+                                        className="service-card-responsive"
                                         style={{
                                             background: '#FFFFFF',
                                             borderRadius: 'clamp(12px, 2vw, 16px)',
-                                            padding: 'clamp(20px, 3vw, 32px)',
+                                            padding: 'clamp(16px, 2.5vw, 32px)',
                                             boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.08)',
                                             borderRight: '6px solid #C7A64E',
                                             display: 'flex',
                                             alignItems: 'center',
-                                            gap: 'clamp(16px, 3vw, 24px)',
+                                            gap: 'clamp(12px, 2.5vw, 24px)',
                                             cursor: 'pointer',
                                             transition: 'all 0.3s ease',
                                             flexDirection: 'row-reverse',
-                                            marginLeft: (index === 1 || index === 3) ? '0' : 'clamp(40px, 8vw, 120px)',
-                                            marginRight: (index === 0 || index === 2) ? '0' : 'clamp(40px, 8vw, 120px)',
-
+                                            marginLeft: (index === 1 || index === 3) ? '0' : 'clamp(0px, 8vw, 120px)',
+                                            marginRight: (index === 0 || index === 2) ? '0' : 'clamp(0px, 8vw, 120px)',
                                         }}
                                     >
                                         {/* Text content */}
@@ -124,23 +124,23 @@ export default function SafetyZoneSection3() {
                                             textAlign: 'right',
                                             display: 'flex',
                                             flexDirection: 'column',
-                                            gap: 'clamp(8px, 1.5vw, 12px)'
+                                            gap: 'clamp(6px, 1.5vw, 12px)'
                                         }}>
                                             <h3 style={{
                                                 fontFamily: 'Cairo, sans-serif',
                                                 fontWeight: '700',
-                                                fontSize: 'clamp(18px, 3vw, 24px)',
-                                                lineHeight: 'normal',
+                                                fontSize: 'clamp(16px, 3vw, 24px)',
+                                                lineHeight: 'clamp(24px, 4vw, 32px)',
                                                 color: '#4E4E4E',
                                                 margin: 0
                                             }}>
-                                                {service.title} <span style={{ fontWeight: '600' }}>{service.titleEn}</span>
+                                                {service.title} <span style={{ fontWeight: '600', fontSize: 'clamp(14px, 2.5vw, 20px)' }}>{service.titleEn}</span>
                                             </h3>
                                             <p style={{
                                                 fontFamily: 'Cairo, sans-serif',
                                                 fontWeight: '400',
-                                                fontSize: 'clamp(14px, 2vw, 18px)',
-                                                lineHeight: 'clamp(22px, 3.5vw, 28px)',
+                                                fontSize: 'clamp(13px, 2vw, 18px)',
+                                                lineHeight: 'clamp(20px, 3.2vw, 28px)',
                                                 color: '#666666',
                                                 margin: 0
                                             }}>
@@ -154,8 +154,8 @@ export default function SafetyZoneSection3() {
                                                 display: 'flex',
                                                 alignItems: 'center',
                                                 justifyContent: 'center',
-                                                width: 'clamp(50px, 8vw, 70px)',
-                                                height: 'clamp(50px, 8vw, 70px)',
+                                                width: 'clamp(50px, 10vw, 70px)',
+                                                height: 'clamp(50px, 10vw, 70px)',
                                                 background: '#F9F7F0',
                                                 borderRadius: '50%',
                                                 overflow: 'hidden'

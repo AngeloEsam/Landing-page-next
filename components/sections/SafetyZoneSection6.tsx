@@ -52,8 +52,20 @@ export default function SafetyZoneSection6() {
             margin-left: 0 !important;
           }
         }
+        
+        @media (max-width: 640px) {
+          .cards-container-section6 {
+            flex-direction: column !important;
+            gap: 16px !important;
+          }
+          .card-section6 {
+            width: 100% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+          }
+        }
       `}</style>
-      <section style={{
+      <section id="safety-zone-section-6" style={{
         width: '100%',
         background: '#FFFFFF',
         padding: 'clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px)',

@@ -53,6 +53,18 @@ export default function SafetyZoneSection7() {
             margin-right: 0 !important;
           }
         }
+        
+        @media (max-width: 640px) {
+          .cards-container-section6 {
+            flex-direction: column !important;
+            gap: 16px !important;
+          }
+          .card-section6 {
+            width: 100% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+          }
+        }
       `}</style>
       <section style={{
         width: '100%',

@@ -38,14 +38,33 @@ export default function Services() {
   return (
     <section id="services" className="services-section" style={{ width: '100%', background: '#FFFFFF' }}>
       <ScrollReveal>
-        <div className="services-container" style={{ maxWidth: '1440px', margin: '0 auto', padding: '20px 64px' }}>
-          <div style={{ maxWidth: '1312px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '50px', alignItems: 'center' }}>
+        <div className="services-container" style={{ 
+          maxWidth: '1440px', 
+          margin: '0 auto', 
+          padding: 'clamp(20px, 4vw, 64px) clamp(16px, 4vw, 64px)' 
+        }}>
+          <div style={{ 
+            maxWidth: '1312px', 
+            margin: '0 auto', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: 'clamp(30px, 5vw, 50px)', 
+            alignItems: 'center' 
+          }}>
           {/* Section Header */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'flex-end', justifyContent: 'center', width: '228px' }}>
+          <div style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: '14px', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            width: '100%',
+            maxWidth: '228px'
+          }}>
             <h2 style={{
               fontFamily: 'Cairo, sans-serif',
               fontWeight: '700',
-              fontSize: '44px',
+              fontSize: 'clamp(32px, 6vw, 44px)',
               lineHeight: 'normal',
               color: '#4E4E4E',
               textAlign: 'center',
@@ -54,20 +73,33 @@ export default function Services() {
             }}>
               ماذا نقدم؟
             </h2>
-            <div style={{ height: '6px', width: '228px', position: 'relative' }}>
+            <div style={{ 
+              height: '6px', 
+              width: 'clamp(180px, 40vw, 228px)', 
+              position: 'relative' 
+            }}>
               <div style={{
                 position: 'absolute',
                 bottom: 0,
                 left: 0,
                 right: 0,
                 height: '6px',
-                background: '#C7A64E'
+                background: '#C7A64E',
+                borderRadius: '3px'
               }} />
             </div>
           </div>
 
-          {/* Service Cards - 4 Columns */}
-          <div className="services-grid" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', gap: '20px' }}>
+          {/* Service Cards - Responsive Grid */}
+          <div className="services-grid" style={{ 
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: 'clamp(16px, 3vw, 20px)',
+            width: '100%',
+            maxWidth: '100%',
+            justifyItems: 'center',
+            alignItems: 'stretch'
+          }}>
             {services.map((service, index) => {
               const isHovered = hoveredIndex === index;
 
@@ -79,9 +111,7 @@ export default function Services() {
                   onHoverEnd={() => setHoveredIndex(null)}
                   animate={{
                     scale: isHovered ? 1.05 : 1,
-                    y: isHovered ? -10 : 0,
-                    marginLeft: isHovered ? '8px' : '0px',
-                    marginRight: isHovered ? '8px' : '0px'
+                    y: isHovered ? -10 : 0
                   }}
                   transition={{
                     type: "spring",
@@ -91,25 +121,25 @@ export default function Services() {
                   style={{
                     background: '#F5F5F5',
                     width: '100%',
-                    maxWidth: '310px',
-                    height: '256px',
-                    borderRadius: '12px',
-                    padding: '12px',
+                    maxWidth: '100%',
+                    height: '100%',
+                    minHeight: 'clamp(280px, 35vw, 320px)',
+                    borderRadius: 'clamp(8px, 2vw, 12px)',
+                    padding: 'clamp(16px, 2.5vw, 20px)',
                     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '18px',
+                    gap: 'clamp(14px, 2vw, 18px)',
                     alignItems: 'center',
-                    cursor: 'pointer',
-                    flex: '0 0 auto'
+                    cursor: 'pointer'
                   }}
                 >
                 {/* Icon Circle */}
                 <div style={{
                   background: '#F1EEE5',
-                  width: '82px',
-                  height: '82px',
-                  borderRadius: '43.5px',
+                  width: 'clamp(70px, 10vw, 82px)',
+                  height: 'clamp(70px, 10vw, 82px)',
+                  borderRadius: '50%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -139,31 +169,43 @@ export default function Services() {
                 </div>
 
                 {/* Content */}
-                <div style={{ width: '100%', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ 
+                  width: '100%', 
+                  textAlign: 'center', 
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  gap: 'clamp(8px, 1.5vw, 12px)',
+                  flex: 1
+                }}>
                   <h3 style={{
                     fontFamily: 'Cairo, sans-serif',
                     fontWeight: '600',
-                    fontSize: '24px',
-                    lineHeight: 'normal',
+                    fontSize: 'clamp(20px, 3vw, 24px)',
+                    lineHeight: '1.2',
                     color: '#000000',
                     margin: '0',
-                    height: '45px',
+                    height: 'clamp(50px, 7vw, 60px)',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    padding: '0 4px'
                   }}>
                     {service.title}
                   </h3>
                   <p style={{
                     fontFamily: 'Cairo, sans-serif',
                     fontWeight: '400',
-                    fontSize: '18px',
-                    lineHeight: 'normal',
+                    fontSize: 'clamp(15px, 2.2vw, 18px)',
+                    lineHeight: '1.5',
                     color: '#4E4E4E',
                     margin: 0,
                     textAlign: 'center',
-                    width: '301px',
-                    maxWidth: '100%'
+                    width: '100%',
+                    padding: '0 clamp(4px, 1vw, 8px)',
+                    flexGrow: 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                   }}>
                     {service.description}
                   </p>

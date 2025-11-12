@@ -1,4 +1,4 @@
-import Header from '@/components/layout/Header';
+import SafetyZoneHeader from '@/components/layout/SafetyZoneHeader';
 import Footer from '@/components/layout/Footer';
 import SafetyZoneSection1 from '@/components/sections/SafetyZoneSection1';
 import SafetyZoneSection2 from '@/components/sections/SafetyZoneSection2';
@@ -11,7 +11,7 @@ import SafetyZoneSection7 from '@/components/sections/SafetyZoneSection7';
 export default function SafetyZonePage() {
   return (
     <main className="min-h-screen">
-      <Header />
+      <SafetyZoneHeader />
       <SafetyZoneSection1 />
       <SafetyZoneSection2 />
       <SafetyZoneSection3 />

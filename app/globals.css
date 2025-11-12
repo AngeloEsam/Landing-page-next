@@ -774,3 +774,92 @@ section {
     font-size: 16px !important;
   }
 }
+
+/* SafetyZoneSection3 Responsive Service Cards */
+@media (max-width: 768px) {
+  .service-card-responsive {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 20px 16px !important;
+  }
+  
+  .service-card-responsive > div:first-child {
+    text-align: center !important;
+  }
+  
+  .service-card-responsive > div:last-child {
+    order: -1;
+    width: 60px !important;
+    height: 60px !important;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card-responsive {
+    padding: 16px 12px !important;
+  }
+  
+  .service-card-responsive > div:last-child {
+    width: 55px !important;
+    height: 55px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .service-card-responsive {
+    padding: 14px 10px !important;
+  }
+  
+  .service-card-responsive > div:last-child {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+/* Services Grid Responsive Layout */
+/* Desktop: 4 columns (default - already set inline) */
+
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: clamp(16px, 3vw, 24px) !important;
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 !important;
+  }
+  
+  .service-card {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Small Mobile (iPhone SE, etc): Ensure card stays centered */
+@media (max-width: 414px) {
+  .services-grid {
+    gap: 16px !important;
+  }
+  
+  .service-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Extra Small Mobile (iPhone 5/SE) */
+@media (max-width: 375px) {
+  .services-grid {
+    gap: 14px !important;
+  }
+}

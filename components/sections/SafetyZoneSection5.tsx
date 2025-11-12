@@ -33,7 +33,7 @@ export default function SafetyZoneSection5() {
   ];
 
   return (
-    <div style={{ width: '100%', background: '#FFFFFF' }}>
+    <div id="safety-zone-section-5" style={{ width: '100%', background: '#FFFFFF' }}>
       {/* Header Section - Outside the background image */}
       <div style={{
         width: '100%',

@@ -9,14 +9,14 @@ export default function Projects() {
   return (
     <section id="projects" className="projects-section" style={{ width: '100%', background: '#F5F5F5' }}>
       <ScrollReveal>
-        <div className="projects-container" style={{ maxWidth: '1440px', margin: '0 auto', padding: '20px 64px' }}>
-          <div style={{ maxWidth: '1312px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '50px', alignItems: 'center' }}>
+        <div className="projects-container" style={{ maxWidth: '1440px', margin: '0 auto', padding: 'clamp(20px, 4vw, 64px)' }}>
+          <div style={{ maxWidth: '1312px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 'clamp(30px, 5vw, 50px)', alignItems: 'center' }}>
           {/* Section Header */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'flex-end', justifyContent: 'center', width: '264px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'flex-end', justifyContent: 'center', width: 'clamp(200px, 80%, 264px)' }}>
             <h2 style={{
               fontFamily: 'Cairo, sans-serif',
               fontWeight: '700',
-              fontSize: '44px',
+              fontSize: 'clamp(28px, 6vw, 44px)',
               lineHeight: 'normal',
               color: '#4E4E4E',
               textAlign: 'center',
@@ -25,7 +25,7 @@ export default function Projects() {
             }}>
               أبرز مشاريعنا
             </h2>
-            <div style={{ height: '6px', width: '264px', position: 'relative' }}>
+            <div style={{ height: '6px', width: '100%', position: 'relative' }}>
               <div style={{ 
                 position: 'absolute', 
                 bottom: 0, 
@@ -38,9 +38,16 @@ export default function Projects() {
           </div>
 
           {/* Project Cards */}
-          <div className="projects-grid" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', gap: '32px' }}>
+          <div className="projects-grid" style={{ 
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 500px), 1fr))',
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            width: '100%', 
+            gap: 'clamp(20px, 4vw, 32px)'
+          }}>
             {/* Safety Zone Card - LEFT */}
-            <Link href="/safety-zone" style={{ textDecoration: 'none', width: '100%', maxWidth: '640px' }}>
+            <Link href="/safety-zone" style={{ textDecoration: 'none', width: '100%' }}>
               <motion.div 
                 className="project-card"
                 whileHover={{ 
@@ -57,13 +64,13 @@ export default function Projects() {
                   background: '#FFFFFF',
                   width: '100%',
                   height: 'auto',
-                  minHeight: '426px',
-                  borderRadius: '12px',
-                  padding: '20px 16px',
+                  minHeight: 'clamp(350px, 50vw, 426px)',
+                  borderRadius: 'clamp(8px, 2vw, 12px)',
+                  padding: 'clamp(16px, 3vw, 20px)',
                   boxShadow: 'inset 0px 8px 30px rgba(0, 0, 0, 0.25)',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '16px',
+                  gap: 'clamp(12px, 2vw, 16px)',
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer'
@@ -72,17 +79,17 @@ export default function Projects() {
               {/* Card Header with Logo */}
               <div className="project-card-header" style={{
                 background: '#F5F5F5',
-                height: '203px',
+                height: 'clamp(150px, 30vw, 203px)',
                 width: '100%',
-                borderRadius: '12px 12px 0 0',
-                padding: '4px 16px',
+                borderRadius: 'clamp(8px, 2vw, 12px) clamp(8px, 2vw, 12px) 0 0',
+                padding: 'clamp(4px, 1vw, 16px)',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '5px',
                 alignItems: 'center',
                 justifyContent: 'center'
               }}>
-                <div style={{ position: 'relative', width: '286px', height: '204px' }}>
+                <div style={{ position: 'relative', width: 'clamp(180px, 40vw, 286px)', height: 'clamp(130px, 30vw, 204px)' }}>
                   <Image
                     src="/images/safty.svg"
                     alt="Safety Zone"
@@ -93,11 +100,11 @@ export default function Projects() {
               </div>
 
               {/* Card Content */}
-              <div className="project-card-content" style={{ textAlign: 'center', width: '100%', maxWidth: '557px', display: 'flex', flexDirection: 'column', gap: '14px', padding: '0 16px' }}>
+              <div className="project-card-content" style={{ textAlign: 'center', width: '100%', display: 'flex', flexDirection: 'column', gap: 'clamp(10px, 2vw, 14px)', padding: '0 clamp(8px, 2vw, 16px)' }}>
                 <p className="project-title" style={{
                   fontFamily: 'Cairo, sans-serif',
                   fontWeight: '700',
-                  fontSize: '30px',
+                  fontSize: 'clamp(22px, 4.5vw, 30px)',
                   lineHeight: 'normal',
                   color: '#C7A64E',
                   margin: 0
@@ -107,8 +114,8 @@ export default function Projects() {
                 <p className="project-description" style={{
                   fontFamily: 'Cairo, sans-serif',
                   fontWeight: '400',
-                  fontSize: '18px',
-                  lineHeight: '28px',
+                  fontSize: 'clamp(14px, 3vw, 18px)',
+                  lineHeight: 'clamp(22px, 4vw, 28px)',
                   color: '#4E4E4E',
                   margin: 0,
                   whiteSpace: 'pre-wrap'
@@ -120,7 +127,7 @@ export default function Projects() {
             </Link>
 
             {/* Mohami Pro Card - RIGHT */}
-            <Link href="/mohami-pro" style={{ textDecoration: 'none', width: '100%', maxWidth: '640px' }}>
+            <Link href="/mohami-pro" style={{ textDecoration: 'none', width: '100%' }}>
               <motion.div 
                 className="project-card"
                 whileHover={{ 
@@ -136,15 +143,14 @@ export default function Projects() {
                 style={{
                   background: '#FFFFFF',
                   width: '100%',
-                  maxWidth: '640px',
                   height: 'auto',
-                  minHeight: '426px',
-                  borderRadius: '12px',
-                  padding: '20px 16px',
+                  minHeight: 'clamp(350px, 50vw, 426px)',
+                  borderRadius: 'clamp(8px, 2vw, 12px)',
+                  padding: 'clamp(16px, 3vw, 20px)',
                   boxShadow: 'inset 0px 8px 30px rgba(0, 0, 0, 0.25)',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '16px',
+                  gap: 'clamp(12px, 2vw, 16px)',
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer'
@@ -153,17 +159,17 @@ export default function Projects() {
               {/* Card Header with Logo */}
               <div className="project-card-header" style={{
                 background: '#F5F5F5',
-                height: '203px',
+                height: 'clamp(150px, 30vw, 203px)',
                 width: '100%',
-                borderRadius: '12px 12px 0 0',
-                padding: '4px 162px',
+                borderRadius: 'clamp(8px, 2vw, 12px) clamp(8px, 2vw, 12px) 0 0',
+                padding: 'clamp(4px, 1vw, 16px)',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '5px',
                 alignItems: 'center',
                 justifyContent: 'center'
               }}>
-                <div style={{ position: 'relative', width: '150px', height: '139px' }}>
+                <div style={{ position: 'relative', width: 'clamp(100px, 20vw, 150px)', height: 'clamp(90px, 18vw, 139px)' }}>
                   <Image
                     src="/images/mohami-pro-logo.png"
                     alt="Mohami Pro"
@@ -174,7 +180,7 @@ export default function Projects() {
                 <p style={{
                   fontFamily: 'Almarai, sans-serif',
                   fontWeight: '700',
-                  fontSize: '28px',
+                  fontSize: 'clamp(20px, 4vw, 28px)',
                   lineHeight: 'normal',
                   background: 'linear-gradient(to right, #4E4E4E, #90853d)',
                   WebkitBackgroundClip: 'text',
@@ -186,11 +192,11 @@ export default function Projects() {
               </div>
 
               {/* Card Content */}
-              <div className="project-card-content" style={{ textAlign: 'center', width: '100%', maxWidth: '557px', display: 'flex', flexDirection: 'column', gap: '14px', padding: '0 16px' }}>
+              <div className="project-card-content" style={{ textAlign: 'center', width: '100%', display: 'flex', flexDirection: 'column', gap: 'clamp(10px, 2vw, 14px)', padding: '0 clamp(8px, 2vw, 16px)' }}>
                 <p className="project-title" style={{
                   fontFamily: 'Cairo, sans-serif',
                   fontWeight: '700',
-                  fontSize: '30px',
+                  fontSize: 'clamp(22px, 4.5vw, 30px)',
                   lineHeight: 'normal',
                   color: '#C7A64E',
                   margin: 0
@@ -200,8 +206,8 @@ export default function Projects() {
                 <p className="project-description" style={{
                   fontFamily: 'Cairo, sans-serif',
                   fontWeight: '400',
-                  fontSize: '18px',
-                  lineHeight: '28px',
+                  fontSize: 'clamp(14px, 3vw, 18px)',
+                  lineHeight: 'clamp(22px, 4vw, 28px)',
                   color: '#4E4E4E',
                   margin: 0,
                   whiteSpace: 'pre-wrap'

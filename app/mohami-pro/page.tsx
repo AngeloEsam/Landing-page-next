@@ -82,7 +82,7 @@ export default function MohamiProPage() {
     <>
     <Header/>
     <div style={{ minHeight: '100vh',marginTop:"100px", background: 'linear-gradient(135deg, #F5F5F5 0%, #E8E8E8 100%)' }}>
-      <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '60px 64px' }}>
+      <div style={{ maxWidth: '1440px', margin: '0 auto', padding: 'clamp(30px, 6vw, 60px) clamp(16px, 4vw, 64px)' }}>
         
         {/* Hero Section with Logo and Title */}
         <motion.div
@@ -93,8 +93,8 @@ export default function MohamiProPage() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: '30px',
-            marginBottom: '60px'
+            gap: 'clamp(20px, 4vw, 30px)',
+            marginBottom: 'clamp(40px, 6vw, 60px)'
           }}
         >
           {/* Logo */}
@@ -109,8 +109,8 @@ export default function MohamiProPage() {
             }}
             style={{
               position: 'relative',
-              width: '200px',
-              height: '185px',
+              width: 'clamp(140px, 25vw, 200px)',
+              height: 'clamp(130px, 23vw, 185px)',
               filter: 'drop-shadow(0px 10px 30px rgba(199, 166, 78, 0.3))'
             }}
           >
@@ -160,9 +160,9 @@ export default function MohamiProPage() {
           transition={{ delay: 0.8, duration: 0.7, type: 'spring' }}
           style={{
             background: 'linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%)',
-            borderRadius: '24px',
-            padding: '50px 40px',
-            marginBottom: '60px',
+            borderRadius: 'clamp(16px, 3vw, 24px)',
+            padding: 'clamp(30px, 5vw, 50px) clamp(20px, 4vw, 40px)',
+            marginBottom: 'clamp(40px, 6vw, 60px)',
             boxShadow: '0px 20px 60px rgba(0, 0, 0, 0.15)',
             textAlign: 'center',
             position: 'relative',
@@ -219,9 +219,9 @@ export default function MohamiProPage() {
             style={{
               fontFamily: 'Cairo, sans-serif',
               fontWeight: '600',
-              fontSize: 'clamp(22px, 3vw, 32px)',
+              fontSize: 'clamp(20px, 3.5vw, 32px)',
               color: '#4E4E4E',
-              marginBottom: '30px',
+              marginBottom: 'clamp(20px, 4vw, 30px)',
               position: 'relative',
               zIndex: 1
             }}
@@ -235,9 +235,10 @@ export default function MohamiProPage() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '20px',
+              gap: 'clamp(12px, 3vw, 20px)',
               position: 'relative',
-              zIndex: 1
+              zIndex: 1,
+              flexWrap: 'wrap'
             }}
           >
             <motion.div
@@ -246,10 +247,10 @@ export default function MohamiProPage() {
               transition={{ delay: 1.2, duration: 0.6 }}
               style={{
                 background: 'linear-gradient(135deg, #C7A64E 0%, #90853d 100%)',
-                borderRadius: '20px',
-                padding: '30px 50px',
+                borderRadius: 'clamp(12px, 2.5vw, 20px)',
+                padding: 'clamp(20px, 4vw, 30px) clamp(30px, 6vw, 50px)',
                 boxShadow: '0px 15px 40px rgba(199, 166, 78, 0.4)',
-                minWidth: '200px'
+                minWidth: 'clamp(160px, 30vw, 200px)'
               }}
             >
               <motion.p
@@ -259,7 +260,7 @@ export default function MohamiProPage() {
                 style={{
                   fontFamily: 'Almarai, sans-serif',
                   fontWeight: '800',
-                  fontSize: 'clamp(60px, 8vw, 90px)',
+                  fontSize: 'clamp(50px, 10vw, 90px)',
                   color: '#FFFFFF',
                   margin: 0,
                   textShadow: '2px 4px 8px rgba(0, 0, 0, 0.2)'
@@ -270,9 +271,9 @@ export default function MohamiProPage() {
               <p style={{
                 fontFamily: 'Cairo, sans-serif',
                 fontWeight: '600',
-                fontSize: 'clamp(18px, 2.5vw, 24px)',
+                fontSize: 'clamp(16px, 3vw, 24px)',
                 color: '#FFFFFF',
-                margin: '10px 0 0 0'
+                margin: 'clamp(8px, 1.5vw, 10px) 0 0 0'
               }}>
                 يوم
               </p>
@@ -288,7 +289,7 @@ export default function MohamiProPage() {
                 ease: 'easeInOut'
               }}
               style={{
-                fontSize: 'clamp(40px, 5vw, 60px)'
+                fontSize: 'clamp(35px, 7vw, 60px)'
               }}
             >
               ⏳
@@ -301,23 +302,24 @@ export default function MohamiProPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}
-          style={{ marginBottom: '60px' }}
+          style={{ marginBottom: 'clamp(40px, 6vw, 60px)' }}
         >
           <h2 style={{
             fontFamily: 'Cairo, sans-serif',
             fontWeight: '700',
-            fontSize: 'clamp(32px, 4vw, 44px)',
+            fontSize: 'clamp(28px, 5vw, 44px)',
             color: '#4E4E4E',
             textAlign: 'center',
-            marginBottom: '50px'
+            marginBottom: 'clamp(30px, 5vw, 50px)'
           }}>
             المميزات القادمة
           </h2>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '30px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
+            gap: 'clamp(20px, 4vw, 30px)',
+            justifyItems: 'center'
           }}>
             {features.map((feature, index) => (
               <motion.div
@@ -332,11 +334,13 @@ export default function MohamiProPage() {
                 }}
                 style={{
                   background: '#FFFFFF',
-                  borderRadius: '16px',
-                  padding: '30px',
+                  borderRadius: 'clamp(12px, 2vw, 16px)',
+                  padding: 'clamp(20px, 4vw, 30px)',
                   textAlign: 'center',
                   boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.1)',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  width: '100%',
+                  maxWidth: '350px'
                 }}
               >
                 <motion.div
@@ -349,8 +353,8 @@ export default function MohamiProPage() {
                     delay: index * 0.5
                   }}
                   style={{
-                    fontSize: '60px',
-                    marginBottom: '20px'
+                    fontSize: 'clamp(45px, 8vw, 60px)',
+                    marginBottom: 'clamp(12px, 2.5vw, 20px)'
                   }}
                 >
                   {feature.icon}
@@ -358,18 +362,18 @@ export default function MohamiProPage() {
                 <h3 style={{
                   fontFamily: 'Cairo, sans-serif',
                   fontWeight: '700',
-                  fontSize: '24px',
+                  fontSize: 'clamp(20px, 3.5vw, 24px)',
                   color: '#C7A64E',
-                  marginBottom: '12px'
+                  marginBottom: 'clamp(8px, 1.5vw, 12px)'
                 }}>
                   {feature.title}
                 </h3>
                 <p style={{
                   fontFamily: 'Cairo, sans-serif',
                   fontWeight: '400',
-                  fontSize: '16px',
+                  fontSize: 'clamp(14px, 2.2vw, 16px)',
                   color: '#4E4E4E',
-                  lineHeight: '26px',
+                  lineHeight: 'clamp(22px, 3.5vw, 26px)',
                   margin: 0
                 }}>
                   {feature.description}
@@ -386,8 +390,8 @@ export default function MohamiProPage() {
           transition={{ delay: 2.5, duration: 0.6 }}
           style={{
             background: 'linear-gradient(135deg, #C7A64E 0%, #90853d 100%)',
-            borderRadius: '20px',
-            padding: '40px',
+            borderRadius: 'clamp(12px, 2.5vw, 20px)',
+            padding: 'clamp(25px, 5vw, 40px)',
             textAlign: 'center',
             boxShadow: '0px 15px 50px rgba(199, 166, 78, 0.4)'
           }}
@@ -395,16 +399,16 @@ export default function MohamiProPage() {
           <p style={{
             fontFamily: 'Cairo, sans-serif',
             fontWeight: '700',
-            fontSize: 'clamp(24px, 3vw, 32px)',
+            fontSize: 'clamp(20px, 4vw, 32px)',
             color: '#FFFFFF',
-            marginBottom: '16px'
+            marginBottom: 'clamp(12px, 2vw, 16px)'
           }}>
             كن أول من يعلم بالإطلاق!
           </p>
           <p style={{
             fontFamily: 'Cairo, sans-serif',
             fontWeight: '400',
-            fontSize: 'clamp(16px, 2vw, 20px)',
+            fontSize: 'clamp(15px, 2.5vw, 20px)',
             color: '#FFFFFF',
             margin: 0,
             opacity: 0.95

@@ -4,9 +4,18 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { NAV_LINKS } from '@/lib/constants';
 
-export default function Header() {
+// Safety Zone specific navigation links
+const SAFETY_ZONE_NAV_LINKS = [
+  { href: '/', label: 'الرئيسية' },
+  { href: '#about-safetyzone', label: 'عن سيفتي زون' },
+  { href: '#safety-zone-section-3', label: 'خدماتنا' },
+  { href: '#safety-zone-section-4', label: 'المميزات' },
+  { href: '#safety-zone-section-5', label: 'كيف تعمل' },
+//   { href: '#safety-zone-section-6', label: 'تواصل معنا' },
+];
+
+export default function SafetyZoneHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
@@ -19,16 +28,6 @@ export default function Header() {
     // For section links (starting with #)
     e.preventDefault();
     
-    // Check if we're on the home page
-    const isHomePage = window.location.pathname === '/';
-    
-    if (!isHomePage) {
-      // If not on home page, navigate to home with hash
-      window.location.href = `/${href}`;
-      return;
-    }
-
-    // If on home page, scroll to section
     const targetId = href.replace('#', '');
     const targetElement = document.getElementById(targetId);
     
@@ -114,19 +113,12 @@ export default function Header() {
               maxWidth: '100%'
             }}
           >
-            {NAV_LINKS.map((link) => (
+            {SAFETY_ZONE_NAV_LINKS.map((link) => (
               <div
                 key={link.href}
                 className="relative flex items-center shrink-0"
                 style={{ gap: 'clamp(4px, 0.5vw, 6px)' }}
-                onMouseEnter={() => link.hasDropdown && setOpenDropdown(link.href)}
-                onMouseLeave={() => setOpenDropdown(null)}
               >
-                {link.hasDropdown && (
-                  <div className="w-5 h-5 lg:w-7 lg:h-7">
-                    <ChevronDown className="w-full h-full" style={{ color: '#4E4E4E' }} />
-                  </div>
-                )}
                 {link.href === '/' ? (
                   <Link
                     href={link.href}
@@ -162,11 +154,6 @@ export default function Header() {
                   >
                     {link.label}
                   </a>
-                )}
-                {link.hasDropdown && openDropdown === link.href && (
-                  <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-gray-200 z-50">
-                    {/* Dropdown content can be added here */}
-                  </div>
                 )}
               </div>
             ))}
@@ -208,7 +195,7 @@ export default function Header() {
         </nav>
       </div>
 
-        {/* Mobile Menu - Full Width with Clear Links */}
+        {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
           <div 
             className="lg:hidden absolute top-full left-0 right-0 w-full border-t shadow-lg"
@@ -221,7 +208,7 @@ export default function Header() {
             }}
           >
             <div className="flex flex-col py-4 px-4 sm:px-6">
-              {NAV_LINKS.map((link, index) => (
+              {SAFETY_ZONE_NAV_LINKS.map((link, index) => (
                 link.href === '/' ? (
                   <Link
                     key={link.href}
@@ -240,9 +227,6 @@ export default function Header() {
                     }}
                   >
                     <span>{link.label}</span>
-                    {link.hasDropdown && (
-                      <ChevronDown className="w-5 h-5" style={{ color: '#C7A64E' }} />
-                    )}
                   </Link>
                 ) : (
                   <a
@@ -262,36 +246,26 @@ export default function Header() {
                     }}
                   >
                     <span>{link.label}</span>
-                    {link.hasDropdown && (
-                      <ChevronDown className="w-5 h-5" style={{ color: '#C7A64E' }} />
-                    )}
                   </a>
                 )
               ))}
-              
-              {/* Book Appointment Button in Mobile Menu */}
+
+              {/* Mobile Book Appointment Button */}
               <a
                 href="https://calendar.app.google/ECx7ACuQPa1jLTSe7"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-4 hover:opacity-90 transition-all transform hover:scale-[1.02] active:scale-95"
+                className="mt-4 py-3 px-6 text-center rounded-lg"
                 style={{
-                  width: '100%',
-                  padding: 'clamp(12px, 3.5vw, 16px) clamp(20px, 5vw, 28px)',
-                  background: 'linear-gradient(135deg, #C7A64E 0%, #B89640 100%)',
-                  borderRadius: 'clamp(10px, 2.5vw, 14px)',
+                  background: '#C7A64E',
                   fontFamily: 'Cairo, sans-serif',
-                  fontWeight: '700',
-                  fontSize: 'clamp(18px, 4.5vw, 22px)',
+                  fontWeight: '600',
+                  fontSize: 'clamp(16px, 4vw, 18px)',
                   color: '#FFFFFF',
                   textDecoration: 'none',
                   cursor: 'pointer',
-                  display: 'block',
-                  textAlign: 'center',
-                  boxShadow: '0 4px 12px rgba(199, 166, 78, 0.3)',
                   animation: 'slideInFromRight 0.3s ease-out forwards',
-                  animationDelay: `${NAV_LINKS.length * 0.05}s`
+                  animationDelay: `${SAFETY_ZONE_NAV_LINKS.length * 0.05}s`
                 }}
               >
                 احجز موعد معنا

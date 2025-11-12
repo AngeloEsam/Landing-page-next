@@ -57,7 +57,7 @@ export default function SafetyZoneSection4() {
     };
 
     return (
-        <section className=" py-20 px-6 text-right font-sans">
+        <section id="safety-zone-section-4" className=" py-20 px-6 text-right font-sans">
             <div className="max-w-7xl mx-auto">
                 <motion.h2
                     className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center"
